@@ -2,7 +2,11 @@
 var allUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var allLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var allNumbers = ["1", "2", "3", "4", "5","6","7","8","9", "10", "11","12", "13", "14", "15", "16", "17", "18", "19", "20" ]
-var allsymbols =[ "@","%","+","\\", "/", "'", "!", "#", "$","^","?", ":",",",")","("]
+console.log (allNumbers.join (''));
+// var allSymbols = [ "@", "%", "+", "/", "'", "!", "#", "$","^","?", ":",",","-"]
+var allSymbols = ["%", "#", "@", "!", "+"]
+
+
 
   
 var generateBtn = document.querySelector("#generate");
@@ -15,7 +19,13 @@ function generateOptions (){
     var passwordLength = parseInt(prompt("What is your password's length (Must be between 8 and 128 characters)? "));
         
     //user needs to input the length of the password
-      
+        //Where should this "else" code be placed?  
+        //else {
+        //alert("Error! Length must be between 8 and 128 characters");
+        //return "";
+
+
+
         //(>=8 && =128)+1;))
         if(passwordLength < 8){
           alert("Error! Password length must be at leat 8 characters");
@@ -58,7 +68,7 @@ function generateOptions (){
         // }
 
         //Ask if the user wants to use symbols
-        var UseCharacters =confirm("Do you want to use symbols?");
+        var UseSymbols =confirm("Do you want to use symbols?");
 
         // if (varUseCharacters ===true){
         //     allchoices.concat(allCharacters)
@@ -68,7 +78,7 @@ function generateOptions (){
           useUpper === false &&
           useLower === false &&
           UseNumbers === false &&
-          UseCharacters === false
+          UseSymbols === false
         ) {
           alert("Select at least one character type");
           return;
@@ -77,7 +87,7 @@ function generateOptions (){
           length: passwordLength,
           upper: useUpper,
           lower: useLower,
-          special: UseCharacters,
+          special: UseSymbols,
           number: UseNumbers
         }
 
@@ -94,19 +104,19 @@ function generateOptions (){
 
 
 
-
-
+//Placing options for the password into an object
 function generatePassword(){
   var options = generateOptions();
   console.log("OBJECT", options)
 
-  var result  = [];
+  var result = [];
   //store types of characters to include
   var possibleChar = []
 //contain one of type of chosen characters
   var guranteeChar = [];
-
-  //Generating the characters for the password
+  
+  //Define newPassword
+  var newPassword = result;
 
 if (options.number) {
   possibleChar = possibleChar.concat(allNumbers);
@@ -141,7 +151,7 @@ for (let i = 0; i < options.length; i++) {
   var randomI = Math.floor(Math.random() * possibleChar.length)
   var element = possibleChar[randomI];
   result.push(element);
-  console.log(result);
+  console.log(result.join(''));
   
 }
 

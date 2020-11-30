@@ -170,6 +170,7 @@ function generateOptions() {
     alert("Select at least one character type");
     return;
   }
+  //Placing options for the password into an object
   var optionsObj = {
     length: passwordLength,
     upper: useUpper,
@@ -186,7 +187,7 @@ function generateOptions() {
 
 // Assignment Code
 
-//Placing options for the password into an object
+
 function generatePassword() {
   var options = generateOptions();
   console.log("OBJECT", options);
@@ -221,7 +222,7 @@ function generatePassword() {
     guranteeChar.push(element);
   }
 
-  if (options.symbol) {
+  if (options.special) {
     possibleChar = possibleChar.concat(allSymbols);
     var randomI = Math.floor(Math.random() * allSymbols.length);
     var element = allSymbols[randomI];

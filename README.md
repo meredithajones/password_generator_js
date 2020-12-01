@@ -14,3 +14,6 @@ As has been my experience, many of my mistakes were more simple that I was expec
 In the end, I put well over 24 hours of work into creating the generator, but it was a very satisfying project to complete once it worked. As you will see in the screenshot below, it produces a very complex password: 
 
 ![An image of the password generator with a secure password displayed on the screen](assets/images/image2)
+
+Below is a link to visit my live Password Generator Webpage:
+https://meredithajones.github.io/password_generator_js/

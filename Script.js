@@ -107,13 +107,8 @@ function generateOptions() {
     )
   );
 
-  //user needs to input the length of the password
-  //Where should this "else" code be placed?
-  //else {
-  //alert("Error! Length must be between 8 and 128 characters");
-  //return "";
-
-  //(>=8 && =128)+1;))
+  //user needs to input the length of the password-Program error codes if
+  //the user selected lenght is too long or too short.
   if (passwordLength < 8) {
     alert("Error! Password length must be at leat 8 characters");
     return;
@@ -148,10 +143,6 @@ function generateOptions() {
   //Ask if the user wants to use numbers
   var UseNumbers = confirm("Do you want to use numbers?");
 
-  // if (useNumbers ===true){
-  //     allChoices.concat(allNumbers)
-
-  // }
 
   //Ask if the user wants to use symbols
   var UseSymbols = confirm("Do you want to use symbols?");
@@ -160,7 +151,7 @@ function generateOptions() {
   //     allchoices.concat(allCharacters)
 
   // }
-  // Make sure that the user selects at least on character type
+  // Make sure that the user selects at least one character type
   if (
     useUpper === false &&
     useLower === false &&
@@ -184,8 +175,6 @@ function generateOptions() {
 
 //Display the password on the display card
 // Write password to the #password input
-
-// Assignment Code
 
 
 function generatePassword() {
